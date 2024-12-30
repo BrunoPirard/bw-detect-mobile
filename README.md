@@ -58,12 +58,15 @@ Is Desktop
 Contributing
 Contributions are welcome! Feel free to:
 
-Fork the project
+### Fork the project
+
 Create your feature branch
 Commit your changes
 Push to the branch
 Create a Pull Request
-License
+
+### License
+
 This plugin is licensed under GPL-2.0 or later. See the LICENSE file for more details.
 
 ### Author
