@@ -7,11 +7,19 @@ use Detection\MobileDetectStandalone;
 class Start {
     private $detection;
 
+
+    /**
+     * Constructor
+     *
+     * Initializes the Mobile Detect library.
+     *
+     * @since 0.3.0
+     *
+     * @return void
+     */
     public function __construct() {
-        // Utiliser la constante définie dans le fichier principal
         $plugin_path = BW_Detect_Mobile_DIR;
 
-        // Inclure les fichiers nécessaires
         require_once $plugin_path . 'Mobile-Detect/standalone/autoloader.php';
         require_once $plugin_path . 'Mobile-Detect/src/MobileDetectStandalone.php';
 
@@ -23,6 +31,23 @@ class Start {
         }
     }
 
+    /**
+     * Initialize the mobile detection instance.
+     *
+     * If the detection instance wasn't initialized yet, it will be
+     * initialized and returned as an array.
+     *
+     * The returned array contains two elements:
+     * - 'detection': The MobileDetectStandalone instance.
+     * - 'isMobile': The result of the isMobile() method.
+     *
+     * If the detection instance couldn't be initialized, the method
+     * will return false.
+     *
+     * @since 0.1.0
+     *
+     * @return array|false The detection instance and its result, or false.
+     */
     public function init() {
         try {
             return [
@@ -35,6 +60,13 @@ class Start {
         }
     }
 
+    /**
+     * Retrieves the mobile detection instance.
+     *
+     * @since 0.1.0
+     *
+     * @return MobileDetectStandalone|null The detection instance if available, or null if not initialized.
+     */
     public function getDetection() {
         return $this->detection;
     }

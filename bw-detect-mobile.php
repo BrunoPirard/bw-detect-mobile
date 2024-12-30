@@ -7,8 +7,8 @@
  *
  * @wordpress-plugin
  * Plugin Name:     BW Detect Mobile
- * Description:     Detect Mobile
- * Version:         0.3.0
+ * Description:     Detect Mobile, Tablet or Desktop
+ * Version:         0.4.0
  * Plugin URI:      https://bulgaweb.com/plugins
  * Author:          BulgaWeb
  * Author URI:      https://bulgaweb.com/
@@ -36,14 +36,11 @@
  * MA 02110-1301, USA.
  */
 
-// Définition des constantes
-define('BW_Detect_Mobile_VERSION', '0.3.0');
+define('BW_Detect_Mobile_VERSION', '0.4.0');
 define('BW_Detect_Mobile_FILE', __FILE__);
 define('BW_Detect_Mobile_DIR', plugin_dir_path(__FILE__));
 define('BW_Detect_Mobile_URL', plugin_dir_url(__FILE__));
 
-// Charger la classe principale
 require_once BW_Detect_Mobile_DIR . 'includes/class-bw-detect-mobile-main.php';
 
-// Démarrer le plugin
 \BW_Detect_Mobile\Main::get_instance();

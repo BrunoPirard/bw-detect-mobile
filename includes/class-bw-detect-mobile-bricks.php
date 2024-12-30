@@ -4,6 +4,13 @@ namespace BW_Detect_Mobile;
 class Bricks {
     private $detection;
 
+    /**
+     * Constructor
+     *
+     * @param Mobile_Detect $detection Mobile detection instance.
+     *
+     * @throws \Exception If the mobile detection instance is empty.
+     */
     public function __construct($detection) {
         if (!$detection) {
             throw new \Exception('Mobile detection instance is required');
@@ -20,6 +27,19 @@ class Bricks {
         add_filter('bricks/builder/code_functions', [$this, 'add_code_functions']);
     }
 
+    /**
+     * Adds code functions related to device detection to the provided array.
+     *
+     * Each function entry includes a name, description, and code example.
+     * The functions added are:
+     * - bw_detect: Provides access to the mobile detection library.
+     * - bw_is_mobile: Checks if the device is mobile, excluding tablets.
+     * - bw_is_tablet: Checks if the device is a tablet.
+     * - bw_is_desktop: Checks if the device is a desktop.
+     *
+     * @param array $functions An array of functions to which the new functions will be added.
+     * @return array The updated array containing the added functions.
+     */
     public function add_code_functions($functions) {
         $functions[] = [
             'name' => 'bw_detect',
@@ -48,6 +68,14 @@ class Bricks {
         return $functions;
     }
 
+    /**
+     * Adds a new condition group for device detection to the provided groups array.
+     *
+     * The condition group added has a name 'bw_device_detection' and a label for display.
+     *
+     * @param array $groups An array of existing condition groups to which the new group will be added.
+     * @return array The updated array of condition groups including the new device detection group.
+     */
     public function add_condition_group($groups) {
         $groups[] = [
             'name' => 'bw_device_detection',
@@ -57,6 +85,16 @@ class Bricks {
         return $groups;
     }
 
+    /**
+     * Adds a new condition option for device detection to the provided options array.
+     *
+     * The condition option added has a key 'device_type' and a label for display.
+     * It provides a select comparison with options 'is' and 'is_not'.
+     * It also provides a select value with options 'mobile', 'tablet', and 'desktop'.
+     *
+     * @param array $options An array of existing condition options to which the new option will be added.
+     * @return array The updated array of condition options including the new device detection option.
+     */
     public function add_condition_options($options) {
         $options[] = [
             'key' => 'device_type',
@@ -84,6 +122,23 @@ class Bricks {
         return $options;
     }
 
+    /**
+     * Checks a condition provided in the $condition parameter and returns a boolean
+     * result indicating whether the condition is matched or not.
+     *
+     * The condition is based on the current device type, and the comparison
+     * parameter is either 'is' or 'is_not'. The value parameter is either
+     * 'mobile', 'tablet', or 'desktop'.
+     *
+     * If the condition is not for device type, the method returns the $result
+     * parameter unchanged.
+     *
+     * @param bool   $result     The current result of the condition check.
+     * @param string $condition_key The key of the condition to check.
+     * @param array  $condition The condition to check, containing the 'compare' and
+     *                           'value' parameters.
+     * @return bool The result of the condition check.
+     */
     public function check_condition($result, $condition_key, $condition) {
         // Vérifier si c'est notre condition
         if ($condition_key !== 'device_type') {

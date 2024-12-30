@@ -1,94 +1,93 @@
 # BW Detect Mobile
 
-## Description
+### Description
 
-BW Detect Mobile est un plugin WordPress qui permet de détecter facilement les appareils mobiles, tablettes et ordinateurs de bureau. Il s'intègre parfaitement avec Bricks Builder et offre des fonctionnalités de détection avancées pour une meilleure expérience utilisateur adaptative.
+BW Detect Mobile is a WordPress plugin that easily detects mobile devices, tablets, and desktop computers. It integrates seamlessly with Bricks Builder and offers advanced detection features for a better adaptive user experience.
 
-## Caractéristiques
+### Features
 
-- Détection précise des appareils mobiles et tablettes
-- Intégration native avec Bricks Builder
-- Fonctions helper simples à utiliser
-- Conditions personnalisées pour Bricks Builder
-- Support multilingue
+Accurate detection of mobile devices and tablets
+Native integration with Bricks Builder
+Easy-to-use helper functions
+Custom conditions for Bricks Builder
+Multilingual support
 
-## Prérequis
+### Requirements
 
-- WordPress 5.0 ou supérieur
-- PHP 8.0 ou supérieur
-- Bricks Builder (recommandé, mais non obligatoire)
+WordPress 5.0 or higher
+PHP 8.0 or higher
+Bricks Builder (recommended but not required)
+Installation
+Download the plugin
+Upload it to the /wp-content/plugins/ directory
+Activate the plugin through the 'Plugins' menu in WordPress
 
-## Installation
+### Usage
 
-1. Téléchargez le plugin
-2. Uploadez-le dans le dossier `/wp-content/plugins/`
-3. Activez le plugin dans le menu 'Plugins' de WordPress
-
-## Utilisation
-
-### Fonctions Helper PHP
-
-// Vérifier si l'appareil est mobile (excluant les tablettes)
+PHP Helper Functions
+// Check if device is mobile (excluding tablets)
 if (bw_is_mobile()) {
-// Code pour mobile
+// Mobile code
 }
 
-// Vérifier si l'appareil est une tablette
+// Check if device is a tablet
 if (bw_is_tablet()) {
-// Code pour tablette
+// Tablet code
 }
 
-// Vérifier si l'appareil est un ordinateur de bureau
+// Check if device is a desktop computer
 if (bw_is_desktop()) {
-// Code pour desktop
+// Desktop code
 }
 
-// Utilisation avancée
+// Advanced usage
 $detector = bw_detect();
 if ($detector->is('iPhone')) {
-// Code spécifique pour iPhone
+// iPhone specific code
 }
 
-## Intégration Bricks Builder
+### Bricks Builder Integration
 
-Le plugin ajoute automatiquement un nouveau groupe de conditions dans Bricks Builder :
+The plugin automatically adds a new condition group in Bricks Builder:
 
-Device Detection
+### Device Detection
+
 Is Mobile
 Is Tablet
 Is Desktop
+Contributing
+Contributions are welcome! Feel free to:
 
-## Contribution
+Fork the project
+Create your feature branch
+Commit your changes
+Push to the branch
+Create a Pull Request
+License
+This plugin is licensed under GPL-2.0 or later. See the LICENSE file for more details.
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-
-Forker le projet
-Créer votre branche de fonctionnalité
-Commiter vos changements
-Pousser vers la branche
-Créer une Pull Request
-Licence
-Ce plugin est sous licence GPL-2.0 ou ultérieure. Voir le fichier LICENSE pour plus de détails.
-
-## Auteur
+### Author
 
 BulgaWeb - https://bulgaweb.com
 
-## Changelog
+### Changelog
+
+0.4.0
+Updating code comments and the README file
 
 0.3.0
-Ajout de la traduction
+Added translation support
 
 0.2.0
-Ajout des fonctions helper globales
-Amélioration de l'intégration Bricks Builder
-Correction de bugs mineurs
+Added global helper functions
+Improved Bricks Builder integration
+Fixed minor bugs
 
 0.1.0
-Version initiale
-Détection basique des appareils mobiles
-Intégration Bricks Builder
+Initial release
+Basic mobile device detection
+Bricks Builder integration
 
-## Remerciements
+### Acknowledgments
 
-Ce plugin utilise la bibliothèque Mobile-Detect pour la détection des appareils.
+This plugin uses the Mobile-Detect library for device detection.
